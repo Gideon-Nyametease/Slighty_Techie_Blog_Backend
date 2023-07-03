@@ -46,8 +46,8 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rspec-rails'
   gem 'rexml'
-  gem 'spring-command-rspec'
-  gem 'parallel-tests'
+  gem 'spring-commands-rspec'
+  gem 'parallel_tests', group: [:development, :test]
   gem 'dotenv-rails'
 end
 
@@ -58,13 +58,13 @@ end
 
 group :test do 
   gem 'capybara', '=2.15'
-  gem 'selenium-webdrivers'
+  gem 'selenium-webdriver'
   gem 'webdrivers'
 
   # code coverage
   gem 'simplecov', require: false
 
   # clear database
-  gem 'database_cleaber-active_record'
+  gem 'database_cleaner-active_record'
 end
 
