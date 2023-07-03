@@ -34,15 +34,37 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem "rack-cors"
+gem "rack-cors"
+
+#authentication
+gem 'devise' 
+#jwt devise for API
+gem 'devise-jwt' 
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'rspec-rails'
+  gem 'rexml'
+  gem 'spring-command-rspec'
+  gem 'parallel-tests'
+  gem 'dotenv-rails'
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+end
+
+group :test do 
+  gem 'capybara', '=2.15'
+  gem 'selenium-webdrivers'
+  gem 'webdrivers'
+
+  # code coverage
+  gem 'simplecov', require: false
+
+  # clear database
+  gem 'database_cleaber-active_record'
 end
 
